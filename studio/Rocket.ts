@@ -5,15 +5,17 @@ import { Cargo } from "./Cargo";
 export class Rocket {
     name: string;
     totalCapacityKg: number;
-    cargoItems: Cargo [];
-    astronauts: Astronaut [];
+    cargoItems: Cargo[] =[];
+    astronauts: Astronaut[] =[];
+    massKg: number;
+    
     constructor(name: string, totalCapacityKg: number){
         this.name = name; 
         this.totalCapacityKg = totalCapacityKg; 
     }
 
     sumMass( items: Payload[] ): number {
-        let sumKg = 0;
+        let sumKg: number = 0;
         for (let i = 0; i < items.length; i++){
             let c = items[i];
             sumKg += c.massKg;
